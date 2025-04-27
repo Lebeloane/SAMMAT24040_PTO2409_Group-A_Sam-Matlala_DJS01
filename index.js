@@ -1,17 +1,35 @@
 /**
- * Debugging Guide
- * 1. Make the code more readable
- * 2. Pick up calculation errors
- * 3. Make these calculations robust such that the calculation does not give an incorrect result, it throws an error to the user if something has gone wrong (parameter used with an incorrect unit of measurement, etc)
+ * Calculating the Mars Climate Orbiter velocity. 
+ * Provided the value needs to be in kilometers per hour 
  */
 
 // Given Parameters
-const vel = 10000; // velocity (km/h)
-const acc = 3; // acceleration (m/s^2)
-const time = 3600; // seconds (1 hour)
-const d = 0; // distance (km)
-const fuel = 5000; // remaining fuel (kg)
-const fbr = 0.5; // fuel burn rate (kg/s)
+const FUELBURN_RATE = 0.5; // fuel burn rate (kg/s)
+
+const initialVelocity = {
+  value: 10000,
+  measurement: 'kilometer-hour',
+}; // velocity (km/h)
+
+const acceleration = {
+  value: 3,
+  measurement: 'meters-second^2',
+}; // acceleration (m/s^2)
+
+const timeInSecs = {
+  value: 3600, // time in seconds
+  measurement: 'seconds',
+};
+
+const initialDistance = {
+  value: 0,
+  measurement: 'kilometers',
+}; // distance (km)
+
+const initialFuel = {
+  value: 5000,
+  measurement: 'kilograms',
+}; // remaining fuel (kg)
 
 
 const d2 = d + (vel*time) //calcultes new distance
